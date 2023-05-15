@@ -1,0 +1,67 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  text-align: center;
+}
+
+.textBox {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hint {
+  margin-top: 10px;
+  color: rgb(104, 104, 104);
+  animation: show 3s ease alternate infinite;
+}
+
+.text {
+  margin-left: 20px;
+  text-align: center;
+}
+.inputBox {
+  font-size: 30px;
+  margin-top: 30px;
+  text-align: center;
+}
+.inputLine {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 20px;
+}
+
+.input1,
+.input2,
+.input3,
+.input4 {
+  font-size: 30px;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 30px;
+  margin-right: 20px;
+}
+
+.input1:focus,
+.input2:focus,
+.input3:focus,
+.input4:focus {
+  outline: none;
+  text-decoration-line: none;
+  text-align: center;
+}
+
+@keyframes show {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
