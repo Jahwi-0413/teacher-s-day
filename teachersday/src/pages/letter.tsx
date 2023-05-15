@@ -1,6 +1,6 @@
 import style from "../style/letter.module.css";
 
-import flower from "../asset/flower.png";
+import flower from "../assets/flower.png";
 import { useEffect, useRef } from "react";
 
 export default function Letter() {
@@ -11,7 +11,7 @@ export default function Letter() {
   }, []);
   return (
     <>
-      <audio src="../asset/bgm.mp3" ref={bgmRef} loop />
+      <audio src="../assets/bgm.mp3" ref={bgmRef} loop />
       <div className={style.container}>
         <img src={flower} className={style.topFlower} alt="카네이션" />
         <img src={flower} className={style.bottomFlower} alt="카네이션" />
