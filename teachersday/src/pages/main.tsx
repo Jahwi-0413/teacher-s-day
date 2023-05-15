@@ -34,7 +34,6 @@ export default function Main() {
   }
   const check4 = (e: string) => {
     if (e === '소') {
-      console.log("!!")
       setIsLock(false)
       setTimeout(move, 700)
     }
