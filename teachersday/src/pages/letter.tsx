@@ -8,32 +8,22 @@ export default function Letter() {
   const bgmRef = useRef<HTMLAudioElement | null>(null);
   const [bgmActive, setBgmActive] = useState(false);
 
-  const start = () => {
-    if (bgmRef.current) {
-      bgmRef.current.volume = 0.3;
-      bgmRef.current.play();
-    }
-  };
-
-  // useEffect(() => {
-  //   try {
-  //     if (!bgmRef) return;
-  //     bgmRef.current?.play();
-  //   } catch (error) {}
-  // }, []);
-
-  const onClickToggle = () => {
+  const onClickToggle = (e: React.MouseEvent<HTMLElement>) => {
     if (!bgmRef.current) return;
     const currentValue = bgmActive;
 
     setBgmActive((current) => !current);
 
     if (!currentValue) {
+      console.log("on");
       bgmRef.current.volume = 0.3;
       bgmRef.current.play();
       return;
+    } else {
+      console.log("off");
+      bgmRef.current.pause();
     }
-    bgmRef.current.pause();
+    e.stopPropagation();
   };
 
   return (
@@ -41,14 +31,13 @@ export default function Letter() {
       <audio src={bgm} ref={bgmRef} loop />
       <div className={style.container}>
         {/* toggle */}
-        {/* <button onClick={start}>start</button> */}
         <img src={flower} className={style.topFlower} alt="카네이션" />
         <img src={flower} className={style.bottomFlower} alt="카네이션" />
         <div className={style.letterBox}>
-          <span onClick={onClickToggle}>
-            <input type="checkbox" id="switch" />
-            <label htmlFor="switch">Toggle</label>
-          </span>
+          <label className={style.switch}>
+            <input type="checkbox" onClick={onClickToggle} />
+            <span className={`${style.slider} ${style.round}`}></span>
+          </label>
           <div className={style.text}>
             <span>to. 계희쌤께</span>
             <div>
