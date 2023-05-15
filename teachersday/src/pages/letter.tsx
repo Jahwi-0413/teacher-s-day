@@ -2,16 +2,28 @@ import style from "../style/letter.module.css";
 
 import flower from "../assets/flower.png";
 import { useEffect, useRef } from "react";
+import bgm from "../assets/bgm.mp3";
 
 export default function Letter() {
   const bgmRef = useRef<HTMLAudioElement | null>(null);
 
+  const start = () => {
+
+    if (bgmRef.current) {
+      console.log(bgmRef)
+      bgmRef.current.volume = 0.3;
+      bgmRef.current.play();
+    }
+  }
+
   useEffect(() => {
+    if (!bgmRef) return
     bgmRef.current?.play();
   }, []);
   return (
     <>
-      <audio src="../assets/bgm.mp3" ref={bgmRef} loop />
+      <audio src={bgm} ref={bgmRef} loop />
+      <button onClick={start} >start</button>
       <div className={style.container}>
         <img src={flower} className={style.topFlower} alt="카네이션" />
         <img src={flower} className={style.bottomFlower} alt="카네이션" />
