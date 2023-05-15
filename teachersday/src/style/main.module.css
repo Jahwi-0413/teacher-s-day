@@ -46,6 +46,7 @@
   border-bottom: 1px solid black;
   width: 30px;
   margin-right: 20px;
+  background: none;
 }
 
 .input1:focus,
