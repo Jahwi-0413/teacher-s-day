@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homgpage": "https://jahwi-0413.github.io/teacher-s-day/",
+  "homgpage": "https://jahwi-0413.github.io/teacher-s-day",
   "eslintConfig": {
     "extends": [
       "react-app",
